@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
 // components
 import ParticlesContainer from '../components/ParticlesContainer'
 import ProjrctionBtn from '../components/ProjectsBtn'
@@ -10,6 +11,7 @@ import { fadeIn } from '../variants'
 import ProjectsBtn from '../components/ProjectsBtn'
 
 const Home = () => {
+  
   return (
     <div className='bg-primary/60 h-full'>
       {/*text*/}
@@ -21,7 +23,7 @@ const Home = () => {
              initial='hidden'
              animate='show'
              exit='hidden' 
-            className='sm:mt-12 text-2xl
+            className='sm:mt-14 text-3xl
                        md:text-4xl md:h2 
                        '>
             Empowering Businesses<br/>Through{' '}
@@ -35,9 +37,9 @@ const Home = () => {
              exit='hidden'
              className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 mt-4 '
           >
-            Versatile MERN Developer skilled in creating dynamic and responsive web applications
-            using MongoDB, Express.js, React, and Node.js. Proficient in both front-end and back-end development,
-            I specialize in crafting seamless user experiences and scalable server solutions.
+            Versatile MERN and React Native Developer skilled in creating dynamic
+             web and mobile applications. Proficient in front-end and back-end development,
+            I specialize in crafting seamless user experiences and scalable solutions.
           </motion.p>
           { /* btn */ }
           <div className='flex justify-center xl:hidden relative'>

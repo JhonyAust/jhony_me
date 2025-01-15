@@ -18,7 +18,7 @@ const Header = () => {
               />
             </div>
           </Link>
-          <Socials />
+          <Socials/>
         </div>
       </div>
     </header>

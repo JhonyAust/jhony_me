@@ -9,7 +9,7 @@ import {
 
 const Socials = () => {
   return (
-    <div className='flex items-center gap-x-5 text-lg'>
+    <div className='flex items-center gap-x-5 text-lg z-50'>
       <Link href={''} className='hover:text-accent transition-all duration-300'>
         <RiYoutubeLine />
       </Link>

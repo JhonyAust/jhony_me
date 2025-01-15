@@ -34,7 +34,7 @@ const Nav = () => {
   const pathname = router.pathname;
   return (
     <nav className ='flex flex-cot items-center xl:justify-center gap-y-4 fixed h-max
-    bottom-0 mt-auto xl:right-[2%] z-50 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
+    bottom-0 mt-auto xl:right-[2%] z-30 top-0 w-full xl:w-16 xl:max-w-md xl:h-screen'>
     { /*inner*/ }
     <div
     className='flex w-full xl:flex-col items-center justify-between

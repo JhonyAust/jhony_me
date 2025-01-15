@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CountUp from "react-countup";
-import { FaHtml5, FaCss3, FaJs, FaReact, FaWordpress, FaFigma } from "react-icons/fa";
-import { SiNextdotjs, SiFramer, SiAdobexd, SiAdobephotoshop } from "react-icons/si";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaWordpress, FaFigma, FaNodeJs } from "react-icons/fa";
+import { SiNextdotjs, SiFramer, SiAdobexd, SiAdobephotoshop,SiMongodb, SiTailwindcss,SiReact } from "react-icons/si";
 import Circles from "../../components/Circles";
 import { easeInOut, motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
@@ -12,15 +12,17 @@ const aboutData = [
         title: 'skills',
         info: [
             {
-                title: 'Web Development',
+                title: 'Web & Mobile App Development',
                 icons: [
-                    <FaHtml5 key="html5" />,
-                    <FaCss3 key="css3" />,
-                    <FaJs key="js" />,
-                    <FaReact key="react" />,
-                    <SiNextdotjs key="nextjs" />,
-                    <SiFramer key="framer" />,
-                    <FaWordpress key="wordpress" />,
+                    <FaReact key="react" />,      // React
+                    <FaJs key="js" />,           // JavaScript
+                    <SiNextdotjs key="nextjs" />, // Next.js
+                    <FaNodeJs key="nodejs" />,   // Node.js
+                    <SiMongodb key="mongodb" />, // MongoDB
+                    <SiTailwindcss key="tailwind" />, // Tailwind CSS
+                    <SiFramer key="framer" />,   // Framer Motion
+                    <FaWordpress key="wordpress" />, // WordPress
+                   
                 ],
             },
             {
@@ -33,51 +35,48 @@ const aboutData = [
             },
         ],
     },
-    {
-        title: 'awards',
-        info: [
-            {
-                title: 'Webby Awards - Honoree',
-                stage: '2011 - 2012',
-            },
-            {
-                title: 'Adobe Design Achievement Awards - Finalist',
-                stage: '2009 - 2010',
-            },
-        ],
-    },
+    
     {
         title: 'experience',
         info: [
+           
             {
-                title: 'UX/UI Designer - XYZ Company',
-                stage: '2012 - 2023',
+                title: 'Web Developer - Mutual Property Limited',
+                stage: '2021 to Present',
             },
-            {
-                title: 'Web Developer - ABC Agency',
-                stage: '2010 - 2012',
-            },
-            {
-                title: 'Intern - DEF Corporation',
-                stage: '2008 - 2010',
-            },
+            
         ],
     },
     {
         title: 'credentials',
         info: [
             {
-                title: 'Web Development - ABC University, LA, CA',
-                stage: '2011',
+                title: 'Certified Mern Stack Developer - CodersTrust Bangladesh',
+                stage: '2024',
             },
             {
-                title: 'Computer Science Diploma - AV Technical Institute',
-                stage: '2009',
+                title: 'B.Sc in CSE - Ahsanullah University of Science and Technology',
+                stage: '2020',
+            },
+           
+        ],
+    },
+    {
+        title: 'CP Skills',
+        info: [
+            {
+                title: 'Intra AUST Programming Contest',
+                
             },
             {
-                title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-                stage: '2006',
+                title: <a href="https://codeforces.com/profile/Jhony_aust" target="_blank" className="text-white/60 hover:text-accent">Codeforces</a>,
+                
             },
+            {
+                title: <a href="https://leetcode.com/jhonyaustcse37/" target="_blank" className=" text-white/60 hover:text-accent">LeetCode</a>
+                
+            },
+           
         ],
     },
 ];
@@ -114,18 +113,17 @@ const About = () => {
                         initial='hidden'
                         animate='show'
                         exit='hidden'
-                        className='h2'>
-                        Captivating <span className='text-accent'>stories</span> birth magnificent designs.
+                        className='h2 text-2xl sm:text-4xl '>
+                        Crafting <span className='text-accent'>code</span> that transforms visions into reality.
                     </motion.h2>
                     <motion.p
                         variants={fadeIn('right', 0.4)}
                         initial='hidden'
                         animate='show'
                         exit='hidden'
-                        className='max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0'>
-                        10 years ago, I began freelancing as a developer. Since then, I&apos;ve
-                        done remote work for agencies, consulted for startups, and
-                        collaborated on digital products for business and consumer use.
+                        className='max-w-[800px] md:max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-xs sm:text-base'>
+                       Passionate Web & App Developer skilled in MERN stack, React Native, and WordPress. With evolving problem-solving abilities,
+                        I focus on crafting responsive, scalable, and high-performing applications while continuously enhancing my expertise.
                     </motion.p>
                     {/* counters */}
                     <motion.div
@@ -138,7 +136,7 @@ const About = () => {
                             {/* experience */}
                             <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                                    <CountUp start={0} end={10} duration={5} /> +
+                                    <CountUp start={0} end={4} duration={5} /> +
                                 </div>
                                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                                     Years of experience
@@ -147,7 +145,7 @@ const About = () => {
                             {/* clients */}
                             <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                                    <CountUp start={0} end={10} duration={5} /> +
+                                    <CountUp start={0} end={5} duration={5} /> +
                                 </div>
                                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                                     Satisfied Customers
@@ -156,7 +154,7 @@ const About = () => {
                             {/* Project */}
                             <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
                                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                                    <CountUp start={0} end={20} duration={5} /> +
+                                    <CountUp start={0} end={10} duration={5} /> +
                                 </div>
                                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                                     Finished Projects
@@ -164,7 +162,7 @@ const About = () => {
                             </div>
                             <div className='relative flex-1'>
                                 <div className='text-2xl xl:text-4xl font-extrabold text-accent mb-2'>
-                                    <CountUp start={0} end={10} duration={5} /> +
+                                    <CountUp start={0} end={4} duration={5} /> +
                                 </div>
                                 <div className='text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]'>
                                     Gain Certificates
@@ -179,17 +177,19 @@ const About = () => {
                     initial='hidden'
                     animate='show'
                     exit='hidden'
-                    className='flex flex-col w-full xl:max-w-[40%] h-[480px]'>
+                    className='flex flex-col w-full xl:max-w-[50%] h-[440px]'>
                     <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4  mt-4'>
                         {aboutData.map((item, itemIndex) => {
                             return (
                                 <div
-                                    key={itemIndex}
-                                    className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
-                                    onClick={() => setIndex(itemIndex)}
-                                >
-                                    {item.title}
-                                </div>
+                                key={itemIndex}
+                                className={`cursor-pointer capitalize xl:text-lg relative after:h-[2px] after:absolute after:bottom-0 after:left-0 after:transition-all after:duration-300 
+                                            ${index === itemIndex ? 'text-accent after:w-[100%] after:bg-white' : 'after:w-8 after:bg-transparent'}`}
+                                onClick={() => setIndex(itemIndex)}
+                              >
+                                {item.title}
+                              </div>
+                              
                             );
                         })}
                     </div>
@@ -198,9 +198,9 @@ const About = () => {
                             return (
                                 <div key={itemIndex} className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'>
                                     <div className='font-light mb-2 md:mb-0'>{item.title}</div>
-                                    <div className='hidden md:flex'>-</div>
+                                    {item.stage && <div className='hidden md:flex'>-</div>}
                                     <div>{item.stage}</div>
-                                    <div className='flex gap-x-4'>
+                                    <div className='flex gap-x-4 '>
                                         {item.icons?.map((icon, iconIndex) => {
                                             return (
                                                 <div className='text-2xl text-white' key={iconIndex}>

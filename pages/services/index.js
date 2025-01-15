@@ -27,9 +27,9 @@ const Services = () => {
           animate='show'
           exit='hidden' 
            className='mb-4 max-w-[400px] mx-auto lg:mx-0'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-             Corrupti culpa fugiat beatae nesciunt reprehenderit libero
-              quia nemo, ullam, sunt praesentium ex quo illo, aliquam a earum blanditiis vero iure. Iusto.
+            As a dedicated full-stack web and mobile developer with expertise
+            in MERN (MongoDB, Express, React, Node.js) and React Native, I specialize
+            in creating dynamic and scalable applications that help businesses grow and succeed.
           </motion.p>
         </div>
         <motion.div 
@@ -37,7 +37,7 @@ const Services = () => {
           initial='hidden'
           animate='show'
           exit='hidden'  
-        className='w-full xl:max-w-[65%]'>
+        className='w-full xl:max-w-[60%]'>
         <ServiceSlider/>
         </motion.div>
       </div>

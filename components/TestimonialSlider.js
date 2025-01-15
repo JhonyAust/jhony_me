@@ -9,24 +9,24 @@ import Image from 'next/image';
 const testimonialData = [
   {
     image: '/t-avt-1.png',
-    name: 'Anne Smith',
-    position: 'Customer',
+    name: 'Md. Riyadh Arafat Amin',
+    position: 'Client',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Working with this team has been an exceptional experience. Their attention to detail and dedication to delivering quality exceeded my expectations!',
   },
   {
     image: '/t-avt-2.png',
-    name: 'Jane Doe',
-    position: 'Customer',
+    name: 'Md. Rishad Arafat Amin',
+    position: 'Client',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Highly professional and responsive. The project was delivered on time and the final result was absolutely fantastic. Highly recommend their services!',
   },
   {
     image: '/t-avt-3.png',
-    name: 'Jhon Doe',
+    name: 'Rakib Hasan',
     position: 'Customer',
     message:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!',
+      'Outstanding work! The team demonstrated a strong understanding of the requirements and provided innovative solutions throughout the project.',
   },
 ];
 
@@ -38,7 +38,7 @@ const TestimonialSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className='h-[240px] sm:h-[240px]'
+      className='h-[280px] sm:h-[260px]'
     >
       {testimonialData.map((testimonial, index) => (
         <SwiperSlide key={index}>
@@ -52,7 +52,7 @@ const TestimonialSlider = () => {
             />
             <h3 className='mt-4 text-lg font-semibold'>{testimonial.name}</h3>
             <p className='text-sm text-gray-600'>{testimonial.position}</p>
-            <p className='mt-2 pb-4 text-center '>{testimonial.message}</p>
+            <p className='mt-2 pb-4 text-center max-w-lg  '>{testimonial.message}</p>
           </div>
         </SwiperSlide>
       ))}

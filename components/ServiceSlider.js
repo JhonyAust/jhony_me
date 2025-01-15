@@ -20,27 +20,23 @@ const serviceData = [
   {
     icon: <RxCrop />,
     title: 'Branding',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'I help businesses create a strong brand identity that stands out, from logo design to strategy, ensuring your brand connects with your audience.',
   },
   {
     icon: <RxPencil2 />,
     title: 'Design',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'I craft intuitive, user-friendly designs that enhance the overall experience, ensuring your web or mobile app is both functional and visually appealing.',
   },
   {
     icon: <RxDesktop />,
     title: 'Development',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'With expertise in the MERN stack and React Native, I build scalable, secure, and high-performance web and mobile applications tailored to your needs.',
   },
-  {
-    icon: <RxReader />,
-    title: 'Copywriting',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-  },
+ 
   {
     icon: <RxRocket />,
     title: 'SEO',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    description: 'I optimize websites to improve visibility, drive organic traffic, and help your site rank higher in search engines to attract more visitors..',
   },
 ];
 
@@ -73,7 +69,7 @@ const ServiceSlider = () => {
               <div className='text-4xl text-accent mb-4'>{item.icon}</div>
               <div>
                 <div>{item.title}</div>
-                <p>{item.description}</p>
+                <p className='text-xs'>{item.description}</p>
               </div>
               <div className='text-3xl'>
                 <RxArrowTopRight className='group-hover:rotate-45 group-hover:text-accent transition-all duration-300'/>

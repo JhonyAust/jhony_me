@@ -18,7 +18,7 @@ const Work = () => {
           initial='hidden'
           animate='show'
           exit='hidden' 
-          className='h2 xl:mt-12'>
+          className='h2 mt-12'>
             My Works <span className='text-accent'>.</span>
           </motion.h2>
           <motion.p 
@@ -26,10 +26,10 @@ const Work = () => {
           initial='hidden'
           animate='show'
           exit='hidden' 
-           className='mb-4 max-w-[400px] mx-auto lg:mx-0'>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-             Corrupti culpa fugiat beatae nesciunt reprehenderit libero
-              quia nemo, ullam, sunt praesentium ex quo illo, aliquam a earum blanditiis vero iure. Iusto.
+           className='max-w-[400px] mx-auto lg:mx-0'>
+          Explore live projects that highlight my full-stack development skills,
+          with a focus on performance, scalability, and user experience. 
+          View project snippets and interactive demos to see the results in action.
           </motion.p>
         </div>
         <motion.div 
@@ -37,7 +37,7 @@ const Work = () => {
           initial='hidden'
           animate='show'
           exit='hidden'  
-        className='w-full xl:max-w-[65%]'>
+        className='w-full xl:max-w-[60%] mt-2 xl:mt-12'>
         <WorkSlider/>
         </motion.div>
       </div>

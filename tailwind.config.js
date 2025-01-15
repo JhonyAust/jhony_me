@@ -39,6 +39,11 @@ module.exports = {
         poppins: [`var(--font-poppins)`, 'sans-serif'],
         sora: [`var(--font-sora)`, 'sans-serif'],
       },
+      zIndex: {
+        '60': '60', // Custom z-index value
+        '70': '70', // Another custom z-index value
+        '80': '80', // Another custom z-index value
+      },
     },
   },
   container: {
