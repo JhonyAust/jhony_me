@@ -5,7 +5,7 @@ import { SiNextdotjs, SiFramer, SiAdobexd, SiAdobephotoshop,SiMongodb, SiTailwin
 import Circles from "../../components/Circles";
 import { easeInOut, motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
-
+import useResponsiveMode from "../../components/useResponsiveMode";
 // data
 const aboutData = [
     {
@@ -84,6 +84,7 @@ const aboutData = [
 const About = () => {
     const [index, setIndex] = useState(0);
     const [hasMounted, setHasMounted] = useState(false);
+    const { isMobilePortrait, isMobileLandscape, isDesktop } = useResponsiveMode();
 
     useEffect(() => {
         setHasMounted(true); // Ensures this runs only after the component has mounted
@@ -106,14 +107,14 @@ const About = () => {
                 {/* <Avatar /> */}
             </motion.div>
 
-            <div className='container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'>
+            <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'container mx-auto h-full flex flex-row items-center' : 'container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6'}`}>
                 <div className='flex-1 flex flex-col justify-center'>
                     <motion.h2
                         variants={fadeIn('right', 0.2)}
                         initial='hidden'
                         animate='show'
                         exit='hidden'
-                        className='h2 text-2xl sm:text-4xl '>
+                        className={`${(isMobileLandscape && !isMobilePortrait) ? 'h2 text-xl' : 'h2 text-2xl sm:text-4xl '}`}>
                         Crafting <span className='text-accent'>code</span> that transforms visions into reality.
                     </motion.h2>
                     <motion.p
@@ -121,7 +122,7 @@ const About = () => {
                         initial='hidden'
                         animate='show'
                         exit='hidden'
-                        className='max-w-[800px] md:max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-xs sm:text-base'>
+                        className={`${(isMobileLandscape && !isMobilePortrait) ? 'max-w-[400px] mx-auto px-2  text-xs' : 'max-w-[800px] md:max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-xs sm:text-base '}`}>
                        Passionate Web & App Developer skilled in MERN stack, React Native, and WordPress. With evolving problem-solving abilities,
                         I focus on crafting responsive, scalable, and high-performing applications while continuously enhancing my expertise.
                     </motion.p>
@@ -131,7 +132,7 @@ const About = () => {
                         initial='hidden'
                         animate='show'
                         exit='hidden'
-                        className='hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8'>
+                        className={`${(isMobileLandscape && !isMobilePortrait) ? 'hidden' : 'hidden md:flex md:max-w-xl xl:max-w-none mx-auto xl:mx-0 mb-8'}`}>
                         <div className='flex flex-1 xl:gap-x-6'>
                             {/* experience */}
                             <div className='relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0'>
@@ -177,8 +178,8 @@ const About = () => {
                     initial='hidden'
                     animate='show'
                     exit='hidden'
-                    className='flex flex-col w-full xl:max-w-[50%] h-[440px]'>
-                    <div className='flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4  mt-4'>
+                    className={`${(isMobileLandscape && !isMobilePortrait) ? 'flex flex-col w-full max-w-[60%] h-[180px]' : 'flex flex-col w-full xl:max-w-[50%] h-[440px] '}`}>
+                    <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'flex gap-x-4  mx-auto  mb-4  mt-4' : 'flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4  mt-4'}`}>
                         {aboutData.map((item, itemIndex) => {
                             return (
                                 <div
@@ -197,9 +198,9 @@ const About = () => {
                         {aboutData[index].info.map((item, itemIndex) => {
                             return (
                                 <div key={itemIndex} className='flex-1 flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60'>
-                                    <div className='font-light mb-2 md:mb-0'>{item.title}</div>
+                                    <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'font-light text-sm mb-2 md:mb-0' : 'font-light mb-2 md:mb-0 '}`}>{item.title}</div>
                                     {item.stage && <div className='hidden md:flex'>-</div>}
-                                    <div>{item.stage}</div>
+                                    <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'font-light text-sm mb-2 md:mb-0' : ''}`}>{item.stage}</div>
                                     <div className='flex gap-x-4 '>
                                         {item.icons?.map((icon, iconIndex) => {
                                             return (

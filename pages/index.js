@@ -9,23 +9,22 @@ import {easeInOut, motion} from 'framer-motion'
 // variants
 import { fadeIn } from '../variants'
 import ProjectsBtn from '../components/ProjectsBtn'
-
+import useResponsiveMode from '../components/useResponsiveMode';
 const Home = () => {
-  
+  const { isMobilePortrait, isMobileLandscape, isDesktop } = useResponsiveMode();
+
   return (
     <div className='bg-primary/60 h-full'>
       {/*text*/}
       <div className='w-full h-full bg-gradient-to-r from-primary/10 via black/30 to-black/10'>
-        <div className='text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto '>
+        <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'text-center flex flex-col justify-center ' : 'text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto '}`}>
           {/*title*/}
           <motion.h1
              variants={fadeIn('down',0.2)}
              initial='hidden'
              animate='show'
              exit='hidden' 
-            className='sm:mt-14 text-3xl
-                       md:text-4xl md:h2 
-                       '>
+            className={`${(isMobileLandscape && !isMobilePortrait) ? ' mt-24 text-lg' : 'sm:mt-14 text-3xl md:text-4xl md:h2  '}`}>
             Empowering Businesses<br/>Through{' '}
             <span className='text-accent'>Web Innovation</span>
           </motion.h1>
@@ -35,14 +34,14 @@ const Home = () => {
              initial='hidden'
              animate='show'
              exit='hidden'
-             className='max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 mt-4 '
-          >
-            Versatile MERN and React Native Developer skilled in creating dynamic
-             web and mobile applications. Proficient in front-end and back-end development,
+             className={`${(isMobileLandscape && !isMobilePortrait) ? 'text-xs max-w-xl p-4  mx-auto' : 'max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 mt-4 '}`}> 
+          
+            Versatile MERN and React Native Developer skilled in creatin dynamic
+             web and mobile applications. Proficient in front-end and bacgk-end development,
             I specialize in crafting seamless user experiences and scalable solutions.
           </motion.p>
           { /* btn */ }
-          <div className='flex justify-center xl:hidden relative'>
+          <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'flex justify-center pb-20 relative' : 'flex justify-center xl:hidden relative'}`}>
             <ProjectsBtn/>
           </div>
           <motion.div

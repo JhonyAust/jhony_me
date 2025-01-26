@@ -5,8 +5,9 @@ import Bulb from "../../components/Circles";
 import Image from 'next/image'
 import {easeInOut, motion} from 'framer-motion'
 import { fadeIn } from '../../variants'
-
+import useResponsiveMode from "../../components/useResponsiveMode";
 const Services = () => {
+  const { isMobilePortrait, isMobileLandscape, isDesktop } = useResponsiveMode();
   return (
   <div className='h-full bg-primary/30 py-36 flex items-center'>
     <Circles/>
@@ -18,7 +19,7 @@ const Services = () => {
           initial='hidden'
           animate='show'
           exit='hidden' 
-          className='h2 xl:mt-8'>
+          className={`${(isMobileLandscape && !isMobilePortrait) ? 'h2  text-2xl' : 'h2 xl:mt-8'} `}>
             My services <span className='text-accent'>.</span>
           </motion.h2>
           <motion.p 
@@ -26,7 +27,7 @@ const Services = () => {
           initial='hidden'
           animate='show'
           exit='hidden' 
-           className='mb-4 max-w-[400px] mx-auto lg:mx-0'>
+           className={`${(isMobileLandscape && !isMobilePortrait) ? 'hidden' : ' mb-4 max-w-[400px] mx-auto lg:mx-0'} `}>
             As a dedicated full-stack web and mobile developer with expertise
             in MERN (MongoDB, Express, React, Node.js) and React Native, I specialize
             in creating dynamic and scalable applications that help businesses grow and succeed.

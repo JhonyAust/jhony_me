@@ -2,10 +2,12 @@ import { motion } from 'framer-motion';
 import { fadeIn } from '../../variants';
 import { useState } from 'react';
 import { FiPhone } from 'react-icons/fi'
+import useResponsiveMode from '../../components/useResponsiveMode';
 const Contact = () => {
   const [message, setMessage] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
+  const { isMobilePortrait, isMobileLandscape, isDesktop } = useResponsiveMode();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,20 +36,29 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-full bg-primary/30 py-32 text-center">
-      <div className="mx-auto h-full flex flex-col justify-center items-center">
+    <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'h-full bg-primary/30 py-20 text-center' : 'h-full bg-primary/30 py-32 text-center'} `}>
+      <motion.h2
+          initial="hidden"
+          animate="show"
+          exit="hidden"
+          variants={fadeIn('down', 0.4)}
+          className={`${(isMobileLandscape && !isMobilePortrait) ? 'h2 text-2xl mt-2' : 'hidden'} `}
+        >
+          Get In <span className="text-accent">Touch</span>
+        </motion.h2>
+      <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'mx-auto h-full flex flex-row gap-4 justify-center ' : 'mx-auto h-full flex flex-col justify-center items-center'} `}>
         <motion.h2
           initial="hidden"
           animate="show"
           exit="hidden"
           variants={fadeIn('down', 0.4)}
-          className="h2 text-4xl"
+          className={`${(isMobileLandscape && !isMobilePortrait) ? 'hidden' : 'h2 text-4xl'} `}
         >
           Get In <span className="text-accent">Touch</span>
         </motion.h2>
 
         <motion.div
-          className="mt-2 w-full max-w-md "
+          className={`${(isMobileLandscape && !isMobilePortrait) ? ' w-full max-w-sm ' : 'mt-2 w-full max-w-md'} `}
           initial="hidden"
           animate="show"
           exit="hidden"
@@ -55,7 +66,7 @@ const Contact = () => {
         >
           <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-y-2 p-2 rounded-lg shadow-md"
+              className={`${(isMobileLandscape && !isMobilePortrait) ? 'flex flex-col gap-y-1 rounded-lg shadow-md ' : 'flex flex-col gap-y-2 p-2 rounded-lg shadow-md'} `}
               >
               <input
               type="text"
@@ -76,7 +87,7 @@ const Contact = () => {
               <textarea
               placeholder="Message"
               className="p-1 border border-gray-300 rounded-lg text-black"
-              rows="2" // Reduced rows for a smaller textarea
+              rows={isMobileLandscape && !isMobilePortrait ? 1 : 3} // Reduced rows for a smaller textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               required
@@ -100,9 +111,10 @@ const Contact = () => {
         >
           <p>Contact me directly</p>
           <p className="text-accent flex items-center justify-center gap-2">
-    <FiPhone className="text-xl" /> +880 01841313444
+          <FiPhone className="text-xl" /> +880 01841313444
   </p>
         </motion.div>
+        
       </div>
     </div>
   );
