@@ -42,7 +42,7 @@ const Contact = () => {
           animate="show"
           exit="hidden"
           variants={fadeIn('down', 0.4)}
-          className={`${(isMobileLandscape && !isMobilePortrait) ? 'h2 text-2xl mt-2' : 'hidden'} `}
+          className={`${(isMobileLandscape && !isMobilePortrait) ? 'h2 text-2xl ' : 'hidden'} `}
         >
           Get In <span className="text-accent">Touch</span>
         </motion.h2>

@@ -40,7 +40,7 @@ const TestimonialSlider = () => {
         clickable: true,
       }}
       modules={[Pagination]}
-      className={`${(isMobileLandscape && !isMobilePortrait) ? 'h-full' : 'h-[300px] sm:h-[280px]'} `}
+      className={`${(isMobileLandscape && !isMobilePortrait) ? 'h-[200px]' : 'h-[300px] sm:h-[280px]'} `}
 
     >
       {testimonialData.map((testimonial, index) => (

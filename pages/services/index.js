@@ -9,7 +9,7 @@ import useResponsiveMode from "../../components/useResponsiveMode";
 const Services = () => {
   const { isMobilePortrait, isMobileLandscape, isDesktop } = useResponsiveMode();
   return (
-  <div className='h-full bg-primary/30 py-36 flex items-center'>
+  <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'h-full bg-primary/30 flex items-center' : 'h-full bg-primary/30 py-36 flex items-center'} `}>
     <Circles/>
     <div className="container mx-auto">
       <div className='flex flex-col xl:flex-row gap-x-8'>

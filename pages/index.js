@@ -24,7 +24,7 @@ const Home = () => {
              initial='hidden'
              animate='show'
              exit='hidden' 
-            className={`${(isMobileLandscape && !isMobilePortrait) ? ' mt-24 text-lg' : 'sm:mt-14 text-3xl md:text-4xl md:h2  '}`}>
+            className={`${(isMobileLandscape && !isMobilePortrait) ? ' mt-16 text-lg' : 'sm:mt-14 text-3xl md:text-4xl md:h2  '}`}>
             Empowering Businesses<br/>Through{' '}
             <span className='text-accent'>Web Innovation</span>
           </motion.h1>

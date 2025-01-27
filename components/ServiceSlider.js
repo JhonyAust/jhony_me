@@ -60,7 +60,7 @@ const ServiceSlider = () => {
       clickable:true
     }}
     modules={[FreeMode,Pagination]}
-    className={`${(isMobileLandscape && !isMobilePortrait) ? 'h-full' : 'h-[240px] sm:h-[340px]'} `}
+    className={`${(isMobileLandscape && !isMobilePortrait) ? 'h-[200px]' : 'h-[240px] sm:h-[340px]'} `}
     
     >
       {serviceData.map((item,index)=>{

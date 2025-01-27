@@ -5,7 +5,7 @@ import useResponsiveMode from '../../components/useResponsiveMode';
 const Testimonials = () => {
   const { isMobilePortrait, isMobileLandscape, isDesktop } = useResponsiveMode();
   return (
-    <div className='h-full bg-primary/30 py-32 text-center'>
+    <div className={`${(isMobileLandscape && !isMobilePortrait) ? 'h-full bg-primary/30 py-0 text-center' : 'h-full bg-primary/30 py-32 text-center'} `}>
       <div className='mx-auto h-full flex flex-col justify-center'>
         <motion.h2 
           initial='hidden'
