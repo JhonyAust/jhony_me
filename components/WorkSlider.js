@@ -7,11 +7,11 @@ import { BsArrowRight } from "react-icons/bs";
 import Image from 'next/image';
 import useResponsiveMode from './useResponsiveMode';
 const workSlides = [
-  { title: 'mutual', path: '/project2.png', link: 'https://mutual-property.com' },
+  { title: 'brokerfree', path: '/broker-free.png', link: 'https://broker-free.com' },
   { title: 'title', path: '/project3.png', link: 'https://github.com/JhonyAust/City-Car-Driving' },
   { title: 'ecommerce', path: '/project1.png', link: 'https://ecommerce-shop-react-app-master-main.vercel.app/' },
   { title: 'example', path: '/project2.png', link: 'https://mutual-property.com' },
-  { title: 'example2', path: '/thumb1.jpg', link: 'https://example.com/project5' },
+  { title: 'brokerfree', path: '/broker-free.png', link: 'https://brokerfree.com' },
 ];
 
 const WorkSlider = () => {
